@@ -3,6 +3,7 @@
 namespace Drupal\thunder_print\Plugin\TagMappingType;
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\thunder_print\IDMS;
 use Drupal\thunder_print\Plugin\TagMappingTypeBase;
 
 /**
@@ -80,6 +81,13 @@ class TextPlain extends TagMappingTypeBase {
         'placeholder' => '',
       ],
     ];
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function replacePlaceholder(IDMS $idms, $tag, $field) {
+    return $idms;
   }
 
 }
